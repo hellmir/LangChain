@@ -1,5 +1,5 @@
+from langchain_community.chat_models import ChatClovaX
 from langchain_core.prompts import PromptTemplate
-from langchain_ollama import ChatOllama
 
 information = "토마토, 밀가루"
 
@@ -13,7 +13,7 @@ summary_template = """
     """
 
 summary_prompt_template = PromptTemplate(input_variables=["information"], template=summary_template)
-llm = ChatOllama(model="llama3.2")
+llm = ChatClovaX(model="HCX-003")
 
 chain = summary_prompt_template | llm
 
